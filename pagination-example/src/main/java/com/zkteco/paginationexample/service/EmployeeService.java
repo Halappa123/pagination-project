@@ -11,4 +11,6 @@ public interface EmployeeService {
     ResultEntity getAllEmployeeDetailsWithPagination(int pageNo, int pageSize);
 
     ResultEntity getAllEmployeeDetailsWithPaginationAndSort(int pageNo, int pageSize, String field);
+
+    ResultEntity getById(Long id);
 }

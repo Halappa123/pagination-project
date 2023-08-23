@@ -36,4 +36,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         Page<Employee> employees2=employeeRepository.findAll(PageRequest.of(pageNo,pageSize).withSort(Sort.by(field)));
         return new ResultEntity("data fetched based on page number and page size with sortening is successful",employees2);
     }
+
+    @Override
+    public ResultEntity getById(Long id) {
+        Optional<Employee> emp=employeeRepository.findById(id);
+        return new ResultEntity("All data fetched based on id",emp);
+    }
+
+
 }

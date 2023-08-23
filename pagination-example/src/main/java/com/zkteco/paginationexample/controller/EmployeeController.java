@@ -33,4 +33,8 @@ public class EmployeeController {
                                                                              @PathVariable String field){
         return new ResponseEntity<ResultEntity>(employeeService.getAllEmployeeDetailsWithPaginationAndSort(pageNo,pageSize,field),HttpStatus.ACCEPTED);
     }
+    @GetMapping("/get_all/{id}")
+    public ResponseEntity<ResultEntity> getAllDetailsById(@PathVariable Long id){
+        return new ResponseEntity<ResultEntity>(employeeService.getById(id),HttpStatus.ACCEPTED);
+    }
 }
