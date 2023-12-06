@@ -37,4 +37,9 @@ public class EmployeeController {
     public ResponseEntity<ResultEntity> getAllDetailsById(@PathVariable Long id){
         return new ResponseEntity<ResultEntity>(employeeService.getById(id),HttpStatus.ACCEPTED);
     }
+
+    @DeleteMapping("/delete_all/{id}")
+    public ResponseEntity<ResultEntity> deleteAllDetailsById(@PathVariable Long id){
+        return new ResponseEntity<ResultEntity>(employeeService.deleteAllDetailsById(id),HttpStatus.ACCEPTED);
+    }
 }

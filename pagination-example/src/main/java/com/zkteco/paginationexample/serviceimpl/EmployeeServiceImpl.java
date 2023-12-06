@@ -43,5 +43,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         return new ResultEntity("All data fetched based on id",emp);
     }
 
+    @Override
+    public ResultEntity deleteAllDetailsById(Long id) {
+        Employee employee=employeeRepository.findById(id).get();
+        if (employee!=null){
+            employeeRepository.delete(employee);
+            return new ResultEntity("All data deleted besed on id successfull",employee);
+        }
+        return new ResultEntity("Invalid id ",employee);
+    }
+
 
 }

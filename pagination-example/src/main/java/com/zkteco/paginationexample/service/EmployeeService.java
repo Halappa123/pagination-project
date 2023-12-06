@@ -13,4 +13,6 @@ public interface EmployeeService {
     ResultEntity getAllEmployeeDetailsWithPaginationAndSort(int pageNo, int pageSize, String field);
 
     ResultEntity getById(Long id);
+
+    ResultEntity deleteAllDetailsById(Long id);
 }
